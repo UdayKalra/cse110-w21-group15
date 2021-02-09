@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<!--Little demo timer made with html/css/js. Just for fun.-->
+<title>PomoTimerDemo</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #dd7777;
+            font-family: 'Major Mono Display','Courier New', Courier, monospace;
+            text-transform: lowercase;
+        }
+
+        [id=pageTitle] {
+            text-align: center;
+            color: #fff;
+            font-size: 60px;
+            margin-top: 60px;
+            margin-bottom: 15px;
+        }
+
+        [id=timerType] {
+            text-align: center;
+            color: #ddd;
+            font-size: 30px;
+            margin: 30px;
+        }
+
+        [id=timeDisplay] {
+            text-align: center;
+            font-size: 60px;
+            margin-top: 30px;
+        }
+
+        [id=timerButton] {
+            font-size: 30px;
+        }
+
+        .center {
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p id=pageTitle>Lil Pom Timer</p>
+    <p id=timerType>Pomo #1</p>
+    <p id=timeDisplay>25:00</p>
+    <div class=center>
+        <button id=timerButton onclick="onTimerPressed()">Start</button>
+    </div>
+    <input type="checkbox" id=test name=test onclick="onTestCheckboxChecked()">
+    <label for=test>Testing Timelength</label>
+    <script>
+        var pomTime = 25 * 60 * 1000;
+        var breakTime = 5 * 60 * 1000;
+        var timerInt = 250; //timer refresh interval in ms
+        var countDownTime;
+        var isCounting = false;
+        var isPomTime = true;
+        var pomCount = 0;
+        var delta;
+        function onTestCheckboxChecked() {
+            var checkbox = document.getElementById("test");
+            if (checkbox.checked == true) {
+                pomTime = 25 * 1000;
+                breakTime = 5 * 1000;
+            } else {
+                pomTime = 25 * 60 * 1000;
+                breakTime = 5 * 60 * 1000;
+            }
+        }
+        function onTimerPressed() {
+            if (isCounting) {
+                //Manual Stop, Reset
+                isCounting = false;
+                clearInterval(delta);
+                isPomTime = true;
+                pomCount = 0;
+                document.getElementById("timerButton").innerHTML = "Start";
+                document.getElementById("timeDisplay").innerHTML = "Timer Stopped";
+            } else {
+                //Start
+                startCountdown();
+                if (isPomTime) {
+                    document.getElementById("timerType").innerHTML = "Pomo #" + pomCount;
+                } else {
+                    if (pomCount < 4) {
+                        document.getElementById("timerType").innerHTML = "Short Break";
+                    } else {
+                        document.getElementById("timerType").innerHTML = "Long Break";
+                        pomCount = 0;
+                    }
+                }
+                document.getElementById("timerButton").innerHTML = "Stop";
+            }
+        }
+        function startCountdown() {
+            isCounting = true;
+            //Check next interval type
+            if (isPomTime) {
+                countDownTime = Date.now() + pomTime;
+                pomCount = pomCount + 1;
+            } else {
+                if (pomCount < 4) {
+                    countDownTime = Date.now() + breakTime;
+                } else {
+                    countDownTime = Date.now() + breakTime * 3;
+                }
+            }
+            delta = setInterval(function () {
+
+                var timeDiff = countDownTime - Date.now();
+                //Min/sec calculation
+                var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                //Formatting
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                //Update display
+                document.getElementById("timeDisplay").innerHTML = minutes + ":" + seconds;
+
+                //Countdown over
+                if (timeDiff < 0) {
+                    clearInterval(delta);
+                    document.getElementById("timeDisplay").innerHTML = "Timer Ended";
+                    isCounting = false;
+                    if (isPomTime) {
+                        isPomTime = false;
+                    } else {
+                        isPomTime = true;
+                    }
+                    document.getElementById("timerButton").innerHTML = "Start";
+                }
+            }, timerInt);
+        }
+    </script>
+
+</body>
+
+</html>
