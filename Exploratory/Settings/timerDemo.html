@@ -7,12 +7,38 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        header {
+            display: block;
+        }
+        .navBar {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+        .navBar>.container{
+            display: flex;
+            flex-wrap: inherit;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .container{
+            max-width: 1920px;
+            width: 100%;
+            padding-right: .75rem;
+            padding-left: .75rem;
+            margin-right: auto;
+            margin-left: auto;
+        }
         body {
             background-color: #dd7777;
             font-family: 'Major Mono Display','Courier New', Courier, monospace;
             text-transform: lowercase;
         }
-
+​
         [id=pageTitle] {
             text-align: center;
             color: #fff;
@@ -20,43 +46,125 @@
             margin-top: 60px;
             margin-bottom: 15px;
         }
-
+​
         [id=timerType] {
             text-align: center;
             color: #ddd;
             font-size: 30px;
             margin: 30px;
         }
-
+​
         [id=timeDisplay] {
             text-align: center;
             font-size: 60px;
             margin-top: 30px;
         }
-
+​
         [id=timerButton] {
             font-size: 30px;
         }
-
+​
         .center {
             font-size: 30px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
+        /* The Modal (background) */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .modal-header {
+        padding: 2px 16px;
+        background-color: rgb(218, 65, 65);
+        color: white;
+        }
+
+        /* Modal Body */
+        .modal-body {padding: 2px 16px;}
+
+        /* Modal Footer */
+        .modal-footer {
+        padding: 2px 16px;
+        background-color: white;
+        color: white;
+        }
+
+        /* Modal Content */
+        .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        animation-name: animatetop;
+        animation-duration: 0.4s
+        }
     </style>
 </head>
-
+​
 <body>
+    <header>
+        <div class="navBar">
+            <div class="container">
+                <a href="https://github.com/UdayKalra/cse110-w21-group15">
+                    <img src="logo 4.svg" id="logo" alt="logo">
+                    <strong id="XVSoft">XVSoft</strong>
+                </a>
+                <div id="pageTitle">POMODORKS</div>
+                <button id="settingsBtn">
+                    <img src="settings.svg" alt="settings">
+                </button>
+            </div>
+        </div>
+    </header>
+    
     <p id=pageTitle>Lil Pom Timer</p>
     <p id=timerType>Pomo #1</p>
     <p id=timeDisplay>25:00</p>
     <div class=center>
-        <button id=timerButton onclick="onTimerPressed()">Start</button>
+        <button id=timerButton>Start</button>
     </div>
-    <input type="checkbox" id=test name=test onclick="onTestCheckboxChecked()">
+    <input type="checkbox" id=test name=test>
     <label for=test>Testing Timelength</label>
+    <audio id="horn" src="air-horn.mp3"></audio>
+    ​<!-- The Setting Modal -->
+    <div id="settingsModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modal Header</h2>
+              </div>
+              <div class="modal-body">
+                <p>Some text in the Modal Body</p>
+                <p>Some other text...</p>
+              </div>
+              <div class="modal-footer">
+                <button id=close>Close</button>
+              </div>
+        </div>
+    
+    </div>
     <script>
+        // Add event listeners
+        document.getElementById("timerButton").addEventListener('click',onTimerPressed);
+        document.getElementById("test").addEventListener('click',onTestCheckboxChecked);
+        document.getElementById("settingsBtn").addEventListener('click',openSettings);
+        document.getElementById("close").addEventListener('click',closeSettings);
+
         var pomTime = 25 * 60 * 1000;
         var breakTime = 5 * 60 * 1000;
         var timerInt = 250; //timer refresh interval in ms
@@ -103,6 +211,8 @@
         function startCountdown() {
             isCounting = true;
             //Check next interval type
+            let audio = document.getElementById("horn");
+            audio.play();
             if (isPomTime) {
                 countDownTime = Date.now() + pomTime;
                 pomCount = pomCount + 1;
@@ -114,7 +224,6 @@
                 }
             }
             delta = setInterval(function () {
-
                 var timeDiff = countDownTime - Date.now();
                 //Min/sec calculation
                 var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
@@ -143,8 +252,15 @@
                 }
             }, timerInt);
         }
+        function openSettings() {
+            let modal = document.getElementById("settingsModal");
+            modal.style.display= "block";
+        }
+        function closeSettings() {
+            let modal = document.getElementById("settingsModal");
+            modal.style.display= "none";
+        }
     </script>
-
 </body>
-
+​
 </html>
