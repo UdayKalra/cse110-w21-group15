@@ -8,7 +8,7 @@ var isPomTime = true;
 var isAudioMuted = false;
 var pomCount = 0;
 var delta;
-var audioVol = 1;
+var audioVolume = 1;
 
 //strings
 var colorChangeSuccessStr = "Successfully changed background color to ";
@@ -18,10 +18,11 @@ var colorChangeFailStr = "Failed to change background color, check input";
 window.onload = function () {
     // Add event listeners
     document.getElementById("timerButton").addEventListener('click', onTimerClick);
-    document.getElementById("test").addEventListener('click', onTestCheckboxClick);
-    document.getElementById("mute").addEventListener('click', onMuteCheckboxClick);
     document.getElementById("settingsBtn").addEventListener('click', onSettingClick);
     document.getElementById("close").addEventListener('click', onSettingCloseClick);
+    document.getElementById("test").addEventListener('click', onTestCheckboxClick);
+    document.getElementById("mute").addEventListener('click', onMuteCheckboxClick);
+    document.getElementById("volume-slider").addEventListener('click', onVolumeSliderClick);
     document.getElementById("btnSetColor").addEventListener('click', onBGColorChangeClick);
 
     //set default values of the bgc setting input
@@ -43,10 +44,24 @@ function onTestCheckboxClick() {
 // fired when mute checkbox is clicked
 function onMuteCheckboxClick(){
     if(document.getElementById("mute").checked == true){
-        document.getElementById("horn").volume = 0;
+        audioVolume = 0; //set horn volume to 0
+        document.getElementById("volume-slider").disabled = true;   //disable the slider when muted
     }else{
-        document.getElementById("horn").volume = audioVol;
+        document.getElementById("volume-slider").disabled = false;  //enable slider when unmuted
+        audioVolume = document.getElementById("volume-slider").value;    //resume slider volume
     }
+    audioVolumeUpdate();
+}
+
+// fired when volume slider is clicked
+function onVolumeSliderClick(){
+    audioVolume = document.getElementById("volume-slider").value;
+    audioVolumeUpdate();
+}
+
+// called when a update of audio volume is performed
+function audioVolumeUpdate(){
+    document.getElementById("horn").volume = audioVolume;
 }
 
 // fired when timer button is clicked
