@@ -33,7 +33,7 @@ window.onload = function () {
     .getElementById('btnSetColor')
     .addEventListener('click', onBGColorChangeClick)
 
-  //set default values of the bgc setting input
+  // set default values of the bgc setting input
   document.getElementById('inputBGColor').placeholder = rgbToHex(
     getComputedStyle(document.body).backgroundColor
   )
