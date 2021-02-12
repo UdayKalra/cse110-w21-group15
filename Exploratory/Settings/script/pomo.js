@@ -8,6 +8,7 @@ var isPomTime = true;
 var isAudioMuted = false;
 var pomCount = 0;
 var delta;
+var audioVol = 1;
 
 //strings
 var colorChangeSuccessStr = "Successfully changed background color to ";
@@ -41,7 +42,11 @@ function onTestCheckboxClick() {
 
 // fired when mute checkbox is clicked
 function onMuteCheckboxClick(){
-
+    if(document.getElementById("mute").checked == true){
+        document.getElementById("horn").volume = 0;
+    }else{
+        document.getElementById("horn").volume = audioVol;
+    }
 }
 
 // fired when timer button is clicked
