@@ -1,14 +1,4 @@
-window.onload = function () {
-    // Add event listeners
-    document.getElementById("timerButton").addEventListener('click', onTimerPressed);
-    document.getElementById("test").addEventListener('click', onTestCheckboxChecked);
-    document.getElementById("settingsBtn").addEventListener('click', openSettings);
-    document.getElementById("close").addEventListener('click', closeSettings);
-    document.getElementById("btnSetColor").addEventListener('click', bgColorInputParse);
-
-    //set default values of the bgc setting input
-    document.getElementById("inputBGColor").placeholder = rgbToHex(getComputedStyle(document.body).backgroundColor);
-}
+//variables initialized here
 var pomTime = 25 * 60 * 1000;
 var breakTime = 5 * 60 * 1000;
 var timerInt = 250; //timer refresh interval in ms
@@ -19,10 +9,26 @@ var isAudioMuted = false;
 var pomCount = 0;
 var delta;
 
+//strings
 var colorChangeSuccessStr = "Successfully changed background color to ";
 var colorChangeFailStr = "Failed to change background color, check input";
 
-function onTestCheckboxChecked() {
+// add event listeners and set default values after page is loaded
+window.onload = function () {
+    // Add event listeners
+    document.getElementById("timerButton").addEventListener('click', onTimerClick);
+    document.getElementById("test").addEventListener('click', onTestCheckboxClick);
+    document.getElementById("mute").addEventListener('click', onMuteCheckboxClick);
+    document.getElementById("settingsBtn").addEventListener('click', onSettingClick);
+    document.getElementById("close").addEventListener('click', onSettingCloseClick);
+    document.getElementById("btnSetColor").addEventListener('click', onBGColorChangeClick);
+
+    //set default values of the bgc setting input
+    document.getElementById("inputBGColor").placeholder = rgbToHex(getComputedStyle(document.body).backgroundColor);
+}
+
+// fired when test option checkbox is clicked
+function onTestCheckboxClick() {
     var checkbox = document.getElementById("test");
     if (checkbox.checked == true) {
         pomTime = 25 * 1000;
@@ -32,7 +38,14 @@ function onTestCheckboxChecked() {
         breakTime = 5 * 60 * 1000;
     }
 }
-function onTimerPressed() {
+
+// fired when mute checkbox is clicked
+function onMuteCheckboxClick(){
+
+}
+
+// fired when timer button is clicked
+function onTimerClick() {
     if (isCounting) {
         //Manual Stop, Reset
         isCounting = false;
@@ -57,6 +70,8 @@ function onTimerPressed() {
         document.getElementById("timerButton").innerHTML = "Stop";
     }
 }
+
+// called when countdown starts
 function startCountdown() {
     isCounting = true;
     //Check next interval type
@@ -103,15 +118,21 @@ function startCountdown() {
         }
     }, timerInt);
 }
-function openSettings() {
+
+// fired when setting button is pressed
+function onSettingClick() {
     let modal = document.getElementById("settingsModal");
     modal.style.display = "block";
 }
-function closeSettings() {
+
+// fired when setting window close button is pressed
+function onSettingCloseClick() {
     let modal = document.getElementById("settingsModal");
     modal.style.display = "none";
 }
-function bgColorInputParse() {
+
+// fired when background color change button is pressed
+function onBGColorChangeClick() {
     let bgHex = document.getElementById("inputBGColor").value;
     let depTextList = document.getElementsByClassName("bgc-dependent");
     let alertStr;
@@ -141,7 +162,6 @@ function contrastFontColorCalc(hex) {
     return fontc;
 }
 //Borrowed code snippets.
-
 //https://stackoverflow.com/a/13713406
 function rgbToHex(rgb) {
     if (rgb.charAt(0) == 'r') {
