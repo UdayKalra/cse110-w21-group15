@@ -172,7 +172,7 @@ function onBGColorChangeClick() {
   let bgHex = document.getElementById('inputBGColor').value;
   let depTextList = document.getElementsByClassName('bgc-dependent');
   let alertStr;
-  if (bgHex != '' && bgHex.length == 7 && hexToRgb(bgHex) != null) {
+  if (bgHex != '' && bgHex.length === 7 && hexToRgb(bgHex) != null) {
     document.body.style.backgroundColor = bgHex;
     for (let i = 0; i < depTextList.length; i++) {
       depTextList.item(i).style.color = contrastFontColorCalc(bgHex); // recolor all
