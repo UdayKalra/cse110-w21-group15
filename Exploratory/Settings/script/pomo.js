@@ -1,6 +1,6 @@
 // variables initialized here
-const pomTime = 25 * 60 * 1000
-const breakTime = 5 * 60 * 1000
+let pomTime = 25 * 60 * 1000
+let breakTime = 5 * 60 * 1000
 const timerInt = 250 // timer refresh interval in ms
 let countDownTime
 let isCounting = false
@@ -41,8 +41,7 @@ window.onload = function () {
 
 // fired when test option checkbox is clicked
 function onTestCheckboxClick () {
-  let checkbox = document.getElementById('test')
-  if (checkbox.checked) {
+  if (document.getElementById('test').checked) {
     pomTime = 25 * 1000
     breakTime = 5 * 1000
   } else {
@@ -55,11 +54,11 @@ function onTestCheckboxClick () {
 function onMuteCheckboxClick () {
   isAudioMuted = document.getElementById('mute').checked
   if (document.getElementById('mute').checked) {
-    audioVolume = 0 //set horn volume to 0
-    document.getElementById('volume-slider').disabled = true //disable the slider when muted
+    audioVolume = 0 // set horn volume to 0
+    document.getElementById('volume-slider').disabled = true // disable the slider when muted
   } else {
-    document.getElementById('volume-slider').disabled = false //enable slider when unmuted
-    audioVolume = document.getElementById('volume-slider').value //resume slider volume
+    document.getElementById('volume-slider').disabled = false // enable slider when unmuted
+    audioVolume = document.getElementById('volume-slider').value // resume slider volume
   }
   audioVolumeUpdate()
 }
@@ -164,8 +163,8 @@ function onSettingCloseClick () {
 
 // fired when background color change button is pressed
 function onBGColorChangeClick () {
-  let bgHex = document.getElementById('inputBGColor').value
-  let depTextList = document.getElementsByClassName('bgc-dependent')
+  const bgHex = document.getElementById('inputBGColor').value
+  const depTextList = document.getElementsByClassName('bgc-dependent')
   let alertStr
   if (bgHex !== '' && bgHex.length === 7 && hexToRgb(bgHex) != null) {
     document.body.style.backgroundColor = bgHex
@@ -181,7 +180,7 @@ function onBGColorChangeClick () {
 }
 
 // Utils
-function contrastFontColorCalc(hex) {
+function contrastFontColorCalc (hex) {
   let fontc
   const bgc = hexToRgb(hex)
   if (bgc.r + bgc.g + bgc.b >= 127 * 3) {
@@ -213,7 +212,7 @@ function hexToRgb (hex) {
     ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
+        b: parseInt(result[3], 16)
       }
     : null
 }
