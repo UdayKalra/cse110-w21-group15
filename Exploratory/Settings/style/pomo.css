@@ -1,0 +1,123 @@
+header {
+  display: block;
+}
+
+.navBar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navBar > .container {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: inherit;
+}
+
+.container {
+  max-width: 1920px;
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+[id="pageTitle"] {
+  font-size: 60px;
+  margin-top: -60px;
+  margin-bottom: 120px;
+  font-weight: bold;
+}
+[id="timerType"] {
+  font-size: 30px;
+}
+[id="timerDisplay"] {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 60px;
+  text-align: center;
+}
+[id="timerButton"] {
+  font-family: "Major Mono Display", "Courier New", Courier, monospace;
+  text-transform: lowercase;
+  font-size: 30px;
+}
+input {
+  font-family: "Major Mono Display", "Courier New", Courier, monospace;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  color: black;
+  background-color: #dd7777;
+  font-family: "Major Mono Display", "Courier New", Courier, monospace;
+  text-transform: lowercase;
+}
+
+/* The Modal (background) */
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  font-size: medium;
+  /* medium font size */
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: rgb(218, 65, 65);
+  color: white;
+}
+
+/* Modal Body */
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Modal Footer */
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: white;
+  color: white;
+}
+
+/* Modal Content */
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}

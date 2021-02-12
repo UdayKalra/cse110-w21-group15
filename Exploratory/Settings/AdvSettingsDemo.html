@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Little demo timer made with html/css/js. Just for fun.-->
+
+<head>
+    <title>PomoTimerDemo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./style/pomo.css" rel="stylesheet" />
+    <script src="./script/pomo.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div id="navigationBar" class="navBar">
+            <div class="container">
+                <a href="https://github.com/UdayKalra/cse110-w21-group15">
+                    <img src="./static/logo4.svg" id="logo" alt="logo" />
+                    <strong id="XVSoft" class="bgc-dependent">XVSoft</strong>
+                </a>
+                <button id="settingsBtn">
+                    <img src="./static/settings.svg" alt="settings" />
+                </button>
+            </div>
+        </div>
+    </header>
+    <div id="timerContainer" class="center">
+        <div id="pageTitle" class="center bgc-dependent">POMODORKS</div>
+        <audio id="horn" src="./static/air-horn.mp3"></audio>
+        <div id="timerType" class="bgc-dependent">Pomo #1</div>
+        <div id="timerDisplay" class="bgc-dependent">25:00</div>
+        <button id="timerButton">Start</button>
+    </div>
+    <!-- The Setting Modal -->
+    <div id="settingsModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <div class="center">
+                    <div>
+                        <label for="test">Testing Timelength</label>
+                        <input type="checkbox" id="test" name="test" />
+                    </div>
+                    <br />
+                    <div><label for="mute">Mute audible alarms</label>
+                        <input type="checkbox" id="mute" name="mute" />
+                    </div>
+                    <br />
+                    <div>
+                        <label for="inputBGColor">Change background color<br /> (Format:#ffffff):</label>
+                        <br />
+                        <div>
+                            <input type="text" id="inputBGColor" name="inputBGColor" />
+                            <button id="btnSetColor">set</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="close">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
