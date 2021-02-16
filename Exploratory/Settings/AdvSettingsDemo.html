@@ -47,8 +47,26 @@
                     </div>
                     <br />
 
-                    <div><label for="mute">Mute audible alarms</label>
+                    <div>
+                        <label for="mute">Mute audible alarms</label>
                         <input type="checkbox" id="mute" name="mute" />
+                    </div>
+                    <br />
+                    <div>
+                        <fieldset id="audio-selection">
+                            <div id="radio-air-horn-container">
+                                <input type="radio" id="radio-air-horn" name="radio-sound" checked>
+                                <label for="radio-air-horn">Air Horn</label>
+                            </div>
+                            <div id="radio-car-horn-container">
+                                <input type="radio" id="radio-car-horn" name="radio-sound">
+                                <label for="radio-car-horn">Car Horn</label>
+                            </div>
+                            <div id="radio-party-horn-container">
+                                <input type="radio" id="radio-party-horn" name="radio-sound">
+                                <label for="radio-party-horn">Party Horn</label>
+                            </div>
+                        </fieldset>
                     </div>
                     <br />
                     <div>
@@ -58,12 +76,9 @@
                     </div>
                     <br />
                     <div>
-                        <label for="inputBGColor">Change background color<br /> (Format:#ffffff):</label>
-                        <br />
-                        <div>
-                            <input type="text" id="inputBGColor" name="inputBGColor" />
-                            <button id="btnSetColor">set</button>
-                        </div>
+                        <label for="inputBGColor">Change background color:</label>
+                        <input type="color" id="inputBGColor" name="inputBGColor" value="#dd7777">
+                        <button id="btnSetColor">set</button>
                     </div>
                 </div>
             </div>

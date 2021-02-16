@@ -37,6 +37,21 @@ window.onload = function () {
   document.getElementById('inputBGColor').placeholder = rgbToHex(
     getComputedStyle(document.body).backgroundColor
   )
+  // Add event when the visual controller for sound level change
+  document.getElementById("radio-air-horn").addEventListener("change", function() {
+    var audio = document.getElementById("horn");
+    audio.setAttribute("src", "./static/air-horn.mp3");
+  });
+
+  document.getElementById("radio-car-horn").addEventListener("change", function() {
+    var audio = document.getElementById("horn");
+    audio.setAttribute("src", "./static/car-horn.mp3");
+  });
+
+  document.getElementById("radio-party-horn").addEventList ener("change", function() {
+    var audio = document.getElementById("horn");
+    audio.setAttribute("src", "./static/party-horn.mp3");
+  });
 }
 
 // fired when test option checkbox is clicked
