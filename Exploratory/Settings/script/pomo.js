@@ -48,7 +48,7 @@ window.onload = function () {
     audio.setAttribute("src", "./static/car-horn.mp3");
   });
 
-  document.getElementById("radio-party-horn").addEventList ener("change", function() {
+  document.getElementById("radio-party-horn").addEventListener("change", function() {
     var audio = document.getElementById("horn");
     audio.setAttribute("src", "./static/party-horn.mp3");
   });
