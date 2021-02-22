@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> TOMATO TIMER </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="index.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- <img id="main-background" src="./assets/background.svg" alt="main-background"> -->
-        <script src="script.js" async defer></script>
-        <section id="nav-bar">
-            <div class="container"> <!--white rectangle behind -->
-                <div id="logo">
-                    XVSoft
-                    <img src="./assets/logo-image.svg" alt="" id="logo-image">
-                </div>
-                <div id="page-title">
-                    <img src="./assets/title-image.svg" alt="" id="title-image">
-                    TOMATO
-                </div>
-                <button id="settings">
-                    Settings
-                </button>
-            </div>
-        </section>
-
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> TOMATO TIMER </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- <img id="main-background" src="./assets/background.svg" alt="main-background"> -->
+    <script src="script.js" async defer></script>
+    <section id="nav-bar">
+      <div class="container"> <!--white rectangle behind -->
+        <div id="logo">
+          XVSoft
+          <img src="./assets/logo-image.svg" alt="" id="logo-image">
+        </div>
+        <div id="page-title">
+          <img src="./assets/title-image.svg" alt="" id="title-image">
+          TOMATO
+        </div>
+        <button id="settings">
+          Settings
+        </button>
+      </div>
+    </section>
+    
+    
+    <section id="main">
+      <div id="progress-bar">                
+        <img id="progress-background" src="./assets/backgroundProgressBar.svg" alt="Progress Bar Background">   
+        <img id="progress-tomato" src="./assets/progressBarTomato.svg" alt="lil tomato">
+      </div>
+      
+      <div id="timer">
+        <img id = "timer-background" src="./assets/timerBackground.svg" alt="Timer background">
+        <button id="play"> 
+          <span id="play-button"></span>
+        </button>
+      </div>
+      
+      <div id="task-container">
+        <div id="task-list">
+          <p>
+            TASK LIST
+            <img src="./assets/arrrowDropdown.svg" alt="Dropdown">
+          </p>
+        </div>
+        <div id="task-queue">
+          <img id="task-icon" src="./assets/taskIcon.svg" alt="task icon">
+          <p>Add a new task and start working.</p>
+          <button id="task-add-button">
+            <img src="./assets/addButton.svg" alt="Plus Button">
+            Add task
+          </button>
+        </div>
+      </div>
+      
+      <div class="inActive" id="onboarding">
         
-        <section id="main">
-            <div id="progress-bar">                
-                <img id="progress-background" src="./assets/backgroundProgressBar.svg" alt="Progress Bar Background">   
-                <img id="progress-tomato" src="./assets/progressBarTomato.svg" alt="lil tomato">
-            </div>
-            
-            <div id="timer">
-                <img id = "timer-background" src="./assets/timerBackground.svg" alt="Timer background">
-                <button id="play"> 
-                    <span id="play-button"></span>
-                </button>
-            </div>
-            
-            <div id="task-container">
-                <div id="task-list">
-                    <p>
-                        TASK LIST
-                        <img src="./assets/arrrowDropdown.svg" alt="Dropdown">
-                    </p>
-                </div>
-                <div id="task-queue">
-                    <img id="task-icon" src="./assets/taskIcon.svg" alt="task icon">
-                    <p>Add a new task and start working.</p>
-                    <button id="task-add-button">
-                        <img src="./assets/addButton.svg" alt="Plus Button">
-                        Add task
-                    </button>
-                </div>
-            </div>
-
-            <div class="inActive" id="onboarding">
-
-            </div>
-        </section>
-    </body>
+      </div>
+    </section>
+  </body>
 </html>
