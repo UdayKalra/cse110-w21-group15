@@ -1,171 +1,163 @@
 /* default */
 div {
-    margin: 0
+  margin: 0;
 }
+
 header {
-    margin: 0;
-    display: block;
-    border: 1px solid black;
+  margin: 0;
+  display: block;
+  border: 1px solid black;
 }
+
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
-button { 
-    background: none;
-    border: none;
-    outline: none;
+
+button {
+  background: none;
+  border: none;
+  outline: none;
 }
+
 /* nav bar */
 .container { 
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 7vh;
-    top: 0;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 7vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#page-title{
-    position: relative;
-    height: 54px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 3em;
-    line-height: 3em;
-    /* or 100% */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.645em;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-
-    color: #F40000;
+#page-title {
+  position: relative;
+  height: 54px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3em;
+  line-height: 3em; /* or 100% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.645em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #f40000;
 }
 
-#settings{
-    position: relative;
-    height: 45px;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 25px;
-    line-height: 20px;
-    padding: 10px;
-    /* or 80% */
-
-    text-align: center;
-    letter-spacing: 0.01em;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-
-    border: 1px solid black;
-    color: #73B92D;
+#settings {
+  position: relative;
+  height: 45px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: Nunito, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 20px;
+  padding: 10px; /* or 80% */
+  text-align: center;
+  letter-spacing: 0.01em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  border: 1px solid black;
+  color: #73b92d;
 }
-
 
 #logo {
-    position: relative;
-    height: 55px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 30px;
-    padding: 10px;
-    /* or 120% */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.01em;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #6ACB09;
-    animation: ease-in 
+  position: relative;
+  height: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: Nunito, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 10px; /* or 120% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.01em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #6acb09;
+  animation: ease-in;
 }
 
-#logo:hover{
-    color: green;
+#logo:hover {
+  color: green;
 }
 
-#logo-image{
-    padding: 5px;
+#logo-image {
+  padding: 5px;
 }
-
 
 /* Main */
-#progress-bar{
-    padding: 50px;
-    position: relative;
-    align-items: center;
-    width: 50%;
-    height: 92px;
-    left: 50%;
-    transform: translateX(-50%);
+#progress-bar {
+  padding: 50px;
+  position: relative;
+  align-items: center;
+  width: 50%;
+  height: 92px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #progress-tomato-1 {
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    right: 103px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  right: 103px;
 }
 
 #progress-tomato-2 {
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    left: 47px;
-    bottom:31px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  left: 47px;
+  bottom:31px;
 }
 
 #progress-tomato-3 {
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    left: 99px;
-    bottom:62px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  left: 99px;
+  bottom:62px;
 }
 
 #progress-background {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* I wasn't sure the best way to implement tomato seeds so i made the empty seeds a child of timer */
-#empty-seeds{
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    right: 0px;
-    top: -6px;
+#empty-seeds {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  right: 0;
+  top: -6px;
 }
+
 #timer {
-    top: 0px;
-    position: relative;
-    height: 500px;
+  top: 0;
+  position: relative;
+  height: 500px;
 }
+
 #timer-background {
   position: absolute;
   top: 0;
@@ -183,395 +175,395 @@ button {
 }
 
 #stop {
-    height: 5rem;
-    width: 5rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 300px;
-    display: none;
+  height: 5rem;
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 300px;
+  display: none;
 }
 
 #play-button {
-    height: 5rem;
-    width: 5rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
-    background-size: 100%;
-    background-image:  url('./assets/playButton.svg');
+  height: 5rem;
+  width: 5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  background-size: 100%;
+  background-image:  url('./assets/playButton.svg');
 }
 
 #stop-button {
-    height: 5rem;
-    width: 5rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
-    background-size: 100%;
-    background-image:  url('./assets/stop-button.svg');
+  height: 5rem;
+  width: 5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  background-size: 100%;
+  background-image:  url('./assets/stop-button.svg');
 }
 
 #time {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 150px;
-    text-align: center;
-    font-family: nunito;
-    font-size: 100px;
-    color: #FF7575;
-    z-index: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
+  text-align: center;
+  font-family: nunito, serif;
+  font-size: 100px;
+  color: #ff7575;
+  z-index: 0;
 }
 
 /* Task List */
-#task-container{
-    position: relative;
-    width: 35vw;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: -8vh;
-    left: 32%;
-    padding-bottom: 2.5vh;
+#task-container {
+  position: relative;
+  width: 35vw;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: -8vh;
+  left: 32%;
+  padding-bottom: 2.5vh;
 }
 
 #task-list {
-    position: relative;
-    /*
+  position: relative;
+  /*
     SHORT BREAK BG COLOR:
     background-color: #FFD4B5;
 
     LONG BREAK BG COLOR:
     background-color: #98E5FE;
-    */
-    background-color: #FFE390;
-    /* 
+ */
+  background-color: #ffe390;
+  /* 
     SHORT BREAK COLOR
     color: #1A465F; 
 
     LONG BREAK COLOR
     color: #1B5407;
-    */
-    color: #B50000;
-    height: 45px;
-    width: 35vw;
-    border-radius: 8px;
-    font-size: large;
-    padding-top: 0.75vh;
-    padding-bottom: 0.75vh;
-    margin-bottom: 1vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2), inset 0px -2px 4px rgba(0, 0, 0, 0.1);
+ */
+  color: #b50000;
+  height: 45px;
+  width: 35vw;
+  border-radius: 8px;
+  font-size: large;
+  padding-top: 0.75vh;
+  padding-bottom: 0.75vh;
+  margin-bottom: 1vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #task-list p {
-    margin-right: auto;
-    margin-left: 44%;
-    width: fit-content;
+  margin-right: auto;
+  margin-left: 44%;
+  width: fit-content;
 }
 
 #task-description {
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    align-items: center;
-    font-size: 1.5rem;
-    margin-bottom: 1vh;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 1vh;
 }
 
 #task-icon {
-    height: 1.5rem;
-    width: 1.5rem;
-    margin-right: 1vw;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 1vw;
 }
 
 #empty-task-queue, #task-queue {
-    position: relative;
-    width: 35.25vw;
-    height: fit-content;
-    /*
+  position: relative;
+  width: 35.25vw;
+  height: fit-content;
+  /*
     SHORT BREAK BG:
     background-color: #FFF1E8;
 
     LONG BREAK BG:
     background-color: #E6F9FF;
-    */
-    background-color: #F3E5D8;
-    /* 
+ */
+  background-color: #f3e5d8;
+  /* 
     SHORT BREAK COLOR:
     color: #1A465F
 
     LONG BREAK COLOR
     color: #175103
-    */
-    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.25);
-    color: #BE1C12;
-    padding-bottom: 1.5vh;
-    display: none; /*todo*/
-    flex-direction: column;
-    align-items: center;
+ */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  color: #be1c12;
+  padding-bottom: 1.5vh;
+  display: none; /*todo*/
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Empty Task Queue*/
 #plus-image {
-    margin-right: 2.9vw;
+  margin-right: 2.9vw;
 }
 
 #task-add-button {
-    position: relative;
-    /*
+  position: relative;
+  /*
     SHORT BREAK BG:
     background-color: #24576E;
-    */
-    background-color: #8D3434;
-    /*
+ */
+  background-color: #8D3434;
+  /*
     SHORT BREAK COLOR:
     color: #FFFFFF;
-    */
-    color: #F4BFBF;
-    border-radius: 8px;
-    width: 12vw;
-    text-align: left;
-    padding: .5vh 0vw .5vh 0.25vw;
-    font-size: large;
+ */
+  color: #F4BFBF;
+  border-radius: 8px;
+  width: 12vw;
+  text-align: left;
+  padding: .5vh 0vw .5vh 0.25vw;
+  font-size: large;
 }
 
 /* Tasks Queue */
 #task-queue-header {
-    display: flex;
-    flex-direction: row;
-    font-size: large;
+  display: flex;
+  flex-direction: row;
+  font-size: large;
 }
 
 #task-header {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 #pomo-task-header {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 #task-body {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 
 /* Adding a Task */
 #adding-task-object {
-    display: flex;
-    flex-direction: row;
-    width: 35.25vw;
-    /* margin-left: 2vw; */
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 35.25vw;
+  /* margin-left: 2vw; */
+  align-items: center;
 }
 
 #pomo-num {
-    font-family: 'Montserrat', sans-serif;
-    font-size: larger;
-    color: #BE1C12;
-    margin-right: 3vw;
-    width: 3vw;
-    border: solid #F4BFBF 3px;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: larger;
+  color: #BE1C12;
+  margin-right: 3vw;
+  width: 3vw;
+  border: solid #F4BFBF 3px;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  text-align: center;
 }
 
 #pomo-task {
-    margin-right: 2vw;
-    width: 18vw;
-    font-family: 'Montserrat', sans-serif;
-    color: #BE1C12;
-    font-size: larger;
-    border: solid #F4BFBF 3px;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    text-align: left;
+  margin-right: 2vw;
+  width: 18vw;
+  font-family: 'Montserrat', sans-serif;
+  color: #BE1C12;
+  font-size: larger;
+  border: solid #F4BFBF 3px;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  text-align: left;
 }
 
 #add-task{
-    position: relative;
-    top: 13px;
-    right: 10px;
-    padding: .25rem .5rem .25rem .5rem;
-    background-color: #8D3434;
-    border-radius: 8px;
+  position: relative;
+  top: 13px;
+  right: 10px;
+  padding: .25rem .5rem .25rem .5rem;
+  background-color: #8D3434;
+  border-radius: 8px;
 }
 
 .complete-task-button {
-    position: relative;
-    right: 10px;
-    padding: .25rem .5rem .25rem .5rem;
-    background-color: #8D3434;
-    border-radius: 8px;
+  position: relative;
+  right: 10px;
+  padding: .25rem .5rem .25rem .5rem;
+  background-color: #8D3434;
+  border-radius: 8px;
 }
 
 /* Custom Task Object */
 .task-object {
-    display: flex;
-    flex-direction: row;
-    width: 35.25vw;
-    background-color: whitesmoke;
-    align-items: center;
-    padding: 0.5rem;
-    border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  width: 35.25vw;
+  background-color: whitesmoke;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 
 .move-task-button {
-    margin-right: 0.5vw;
+  margin-right: 0.5vw;
 }
 
 #move-task-icon {
-    width: 0.3rem; 
+  width: 0.3rem; 
 }
 
 .delete-task-button {
-    padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 #delete-task-icon {
-    height: 0.3rem;
-    width: 2rem;
+  height: 0.3rem;
+  width: 2rem;
 }
 
 .task-pomo-num {
-    font-size: larger;
-    text-align: center;
-    margin-right: 5.5vw;
-    width: 3vw;
+  font-size: larger;
+  text-align: center;
+  margin-right: 5.5vw;
+  width: 3vw;
 }
 
 .task-text {
-    font-size: larger;
-    width: 18vw;
-    text-align: left;
-    margin-right: 4vw;
-    overflow: wrap;
+  font-size: larger;
+  width: 18vw;
+  text-align: left;
+  margin-right: 4vw;
+  overflow: wrap;
 }
 #task-flex {
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 35.25vw;
-    font-family: Montserrat, Nunito;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    margin: 5px;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 35.25vw;
+  font-family: Montserrat, Nunito, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  margin: 5px;
 }
 #input {
-    margin-left: 3vw;
+  margin-left: 3vw;
 }
 
 /* Settings */
 #settings-overlay {
-    display: block;
-    position: absolute;
-    /* background-color: #F8F0E9; */
-    z-index: 1;
-    left: 79.5%;
-    top: 8vh;
-    width: 19.5vw;
-    height: fit-content;
-    border-radius: 8px;
-    text-align: center;
-    color: #BE1C12;
-    font-size: 2rem;
-    font-family: 'Montserrat', sans-serif;
-    padding-top: .5vh;
-    padding-bottom: 2vh;
+  display: block;
+  position: absolute;
+  /* background-color: #F8F0E9; */
+  z-index: 1;
+  left: 79.5%;
+  top: 8vh;
+  width: 19.5vw;
+  height: fit-content;
+  border-radius: 8px;
+  text-align: center;
+  color: #BE1C12;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: .5vh;
+  padding-bottom: 2vh;
 
 
-    background: #F8F0E9;
-    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
+  background: #F8F0E9;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
 }
 
 #settings-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: .46vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: .46vw;
 }
 
 #settings-header img {
-    height: 1.5rem;
-    margin-right: 5vw;
+  height: 1.5rem;
+  margin-right: 5vw;
 }
 
 #settings-overlay hr {
-    margin: 1vh 0vw 0.5vh 0.46vw;
-    width: 95%;               
-    background-color:rgb(155, 151, 151);
-    height: 1px;
+  margin: 1vh 0vw 0.5vh 0.46vw;
+  width: 95%;               
+  background-color:rgb(155, 151, 151);
+  height: 1px;
 }
 
 #adjust-time {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: .5vh;
-    color: #BE1C12;
-    font-size: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: .5vh;
+  color: #BE1C12;
+  font-size: 1.6rem;
 }
 
 #adjust-time label {
-    margin-left: 0.46vw;
+  margin-left: 0.46vw;
 }
 
 #pomo-time {
-    margin-left: .5vw;
-    width: 4vw;
-    border: solid #F4BFBF 3px;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    text-align: center;
-    color: #BE1C12;
+  margin-left: .5vw;
+  width: 4vw;
+  border: solid #F4BFBF 3px;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  text-align: center;
+  color: #BE1C12;
 }
 
 #adjust-volume {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    margin-top: .5vh;
-    color: #BE1C12;
-    font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-top: .5vh;
+  color: #BE1C12;
+  font-size: 1.6rem;
 }
 
 #adjust-volume label {
-    margin-left: 0.46vw;
+  margin-left: 0.46vw;
 }
 
 #volume-text {
-    margin-left: 2.65vw;
-    border: solid #F4BFBF 3px;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    width: 4vw;
-    text-align: center;
-    color: #BE1C12;
+  margin-left: 2.65vw;
+  border: solid #F4BFBF 3px;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  width: 4vw;
+  text-align: center;
+  color: #BE1C12;
 }
 
 #volume-slider {
-    margin-top: 2vh;
-    margin-left: 1.5vw;
-    width: 16.25vw;
+  margin-top: 2vh;
+  margin-left: 1.5vw;
+  width: 16.25vw;
 }
 
 
 
 body {
-    background-image: url('./assets/background.svg');
-    background-size: 100%;
-    width: 100vw;
-    height: 100vh;
+  background-image: url('./assets/background.svg');
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 
@@ -581,28 +573,28 @@ body {
     bottom: 1%;
 } */
 #restart-button{
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 44px;
-    height: 44px;
-    left: 1.5%;
-    bottom: 16%;
-    z-index: 0;
-    transform: translateX(50%);
-    background-size: 100%;
-    background-image:  url('./assets/restart-button.svg');
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 44px;
+  height: 44px;
+  left: 1.5%;
+  bottom: 16%;
+  z-index: 0;
+  transform: translateX(50%);
+  background-size: 100%;
+  background-image:  url('./assets/restart-button.svg');
 }
 
 #play-restart {
-    position: absolute;
-    bottom: 2%;
-    background-image: url('./assets/restart-tomato.svg');
-    background-size: 100%;
-    width: 90.96px;
-    background-position: center;
-    height: 99.62px;
-    bottom: 2%;
+  position: absolute;
+  bottom: 2%;
+  background-image: url('./assets/restart-tomato.svg');
+  background-size: 100%;
+  width: 90.96px;
+  background-position: center;
+  height: 99.62px;
+  bottom: 2%;
 }
 
 /* Onboarding */
@@ -679,8 +671,8 @@ body {
   width: 45%;
   height: 80%;
   margin: 5%;
-  right: 0%;
-  top: 0%;
+  right: 0;
+  top: 0;
 }
 
 #onboarding-text h1 {
