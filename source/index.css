@@ -234,7 +234,7 @@ button {
 
 #task-list {
   position: relative;
-  
+
   /*
     SHORT BREAK BG COLOR:
     background-color: #FFD4B5;
@@ -291,7 +291,7 @@ button {
   position: relative;
   width: 35.25vw;
   height: fit-content;
-  
+
   /*
     SHORT BREAK BG:
     background-color: #FFF1E8;
@@ -508,7 +508,7 @@ button {
 #settings-overlay hr {
   margin: 1vh 0 0.5vh 0.46vw;
   width: 95%;
-  background-color:rgb(155, 151, 151);
+  background-color: rgb(155, 151, 151);
   height: 1px;
 }
 
@@ -550,7 +550,7 @@ button {
 
 #volume-text {
   margin-left: 2.65vw;
-  border: solid #f4bfbF 3px;
+  border: solid #f4bfbf 3px;
   border-radius: 8px;
   background-color: whitesmoke;
   width: 4vw;
@@ -587,7 +587,7 @@ body {
   z-index: 0;
   transform: translateX(50%);
   background-size: 100%;
-  background-image:  url('./assets/restart-button.svg');
+  background-image: url('./assets/restart-button.svg');
 }
 
 #play-restart {
