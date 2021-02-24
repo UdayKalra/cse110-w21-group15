@@ -26,7 +26,7 @@ button {
 }
 
 /* nav bar */
-.container { 
+.container {
   position: relative;
   top: 0;
   width: 100%;
@@ -43,7 +43,7 @@ button {
   height: 54px;
   top: 50%;
   transform: translateY(-50%);
-  font-family: Nunito;
+  font-family: Nunito, serif;
   font-style: normal;
   font-weight: normal;
   font-size: 3em;
@@ -126,7 +126,7 @@ button {
   text-align: center;
   position: relative;
   left: 47px;
-  bottom:31px;
+  bottom: 31px;
 }
 
 #progress-tomato-3 {
@@ -134,7 +134,7 @@ button {
   text-align: center;
   position: relative;
   left: 99px;
-  bottom:62px;
+  bottom: 62px;
 }
 
 #progress-background {
@@ -194,7 +194,7 @@ button {
   top: 0;
   z-index: 0;
   background-size: 100%;
-  background-image:  url('./assets/playButton.svg');
+  background-image: url('./assets/playButton.svg');
 }
 
 #stop-button {
@@ -207,7 +207,7 @@ button {
   top: 0;
   z-index: 0;
   background-size: 100%;
-  background-image:  url('./assets/stop-button.svg');
+  background-image: url('./assets/stop-button.svg');
 }
 
 #time {
@@ -234,6 +234,7 @@ button {
 
 #task-list {
   position: relative;
+  
   /*
     SHORT BREAK BG COLOR:
     background-color: #FFD4B5;
@@ -242,9 +243,10 @@ button {
     background-color: #98E5FE;
  */
   background-color: #ffe390;
-  /* 
+
+  /*
     SHORT BREAK COLOR
-    color: #1A465F; 
+    color: #1A465F;
 
     LONG BREAK COLOR
     color: #1B5407;
@@ -284,10 +286,12 @@ button {
   margin-right: 1vw;
 }
 
-#empty-task-queue, #task-queue {
+#empty-task-queue,
+#task-queue {
   position: relative;
   width: 35.25vw;
   height: fit-content;
+  
   /*
     SHORT BREAK BG:
     background-color: #FFF1E8;
@@ -296,7 +300,8 @@ button {
     background-color: #E6F9FF;
  */
   background-color: #f3e5d8;
-  /* 
+
+  /*
     SHORT BREAK COLOR:
     color: #1A465F
 
@@ -306,32 +311,34 @@ button {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   color: #be1c12;
   padding-bottom: 1.5vh;
-  display: none; /*todo*/
+  display: none; /* todo */
   flex-direction: column;
   align-items: center;
 }
 
-/* Empty Task Queue*/
+/* Empty Task Queue */
 #plus-image {
   margin-right: 2.9vw;
 }
 
 #task-add-button {
   position: relative;
+  
   /*
     SHORT BREAK BG:
     background-color: #24576E;
  */
-  background-color: #8D3434;
+  background-color: #8d3434;
+
   /*
     SHORT BREAK COLOR:
     color: #FFFFFF;
  */
-  color: #F4BFBF;
+  color: #f4bfbf;
   border-radius: 8px;
   width: 12vw;
   text-align: left;
-  padding: .5vh 0vw .5vh 0.25vw;
+  padding: 0.5vh 0 0.5vh 0.25vw;
   font-size: large;
 }
 
@@ -345,6 +352,7 @@ button {
 #task-header {
   padding-bottom: 10px;
 }
+
 #pomo-task-header {
   padding-bottom: 10px;
 }
@@ -359,18 +367,17 @@ button {
 #adding-task-object {
   display: flex;
   flex-direction: row;
-  width: 35.25vw;
-  /* margin-left: 2vw; */
+  width: 35.25vw; /* margin-left: 2vw; */
   align-items: center;
 }
 
 #pomo-num {
   font-family: 'Montserrat', sans-serif;
   font-size: larger;
-  color: #BE1C12;
+  color: #be1c12;
   margin-right: 3vw;
   width: 3vw;
-  border: solid #F4BFBF 3px;
+  border: solid #f4bfbf 3px;
   border-radius: 8px;
   background-color: whitesmoke;
   text-align: center;
@@ -380,28 +387,28 @@ button {
   margin-right: 2vw;
   width: 18vw;
   font-family: 'Montserrat', sans-serif;
-  color: #BE1C12;
+  color: #be1c12;
   font-size: larger;
-  border: solid #F4BFBF 3px;
+  border: solid #f4bfbf 3px;
   border-radius: 8px;
   background-color: whitesmoke;
   text-align: left;
 }
 
-#add-task{
+#add-task {
   position: relative;
   top: 13px;
   right: 10px;
-  padding: .25rem .5rem .25rem .5rem;
-  background-color: #8D3434;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  background-color: #8d3434;
   border-radius: 8px;
 }
 
 .complete-task-button {
   position: relative;
   right: 10px;
-  padding: .25rem .5rem .25rem .5rem;
-  background-color: #8D3434;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  background-color: #8d3434;
   border-radius: 8px;
 }
 
@@ -421,7 +428,7 @@ button {
 }
 
 #move-task-icon {
-  width: 0.3rem; 
+  width: 0.3rem;
 }
 
 .delete-task-button {
@@ -447,8 +454,9 @@ button {
   margin-right: 4vw;
   overflow: wrap;
 }
+
 #task-flex {
-  display:flex;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 35.25vw;
@@ -458,6 +466,7 @@ button {
   font-size: 15px;
   margin: 5px;
 }
+
 #input {
   margin-left: 3vw;
 }
@@ -466,22 +475,20 @@ button {
 #settings-overlay {
   display: block;
   position: absolute;
+
   /* background-color: #F8F0E9; */
   z-index: 1;
   left: 79.5%;
   top: 8vh;
   width: 19.5vw;
   height: fit-content;
-  border-radius: 8px;
   text-align: center;
-  color: #BE1C12;
+  color: #be1c12;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
-  padding-top: .5vh;
+  padding-top: 0.5vh;
   padding-bottom: 2vh;
-
-
-  background: #F8F0E9;
+  background: #f8f0e9;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
 }
@@ -490,7 +497,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: .46vw;
+  padding-left: 0.46vw;
 }
 
 #settings-header img {
@@ -499,8 +506,8 @@ button {
 }
 
 #settings-overlay hr {
-  margin: 1vh 0vw 0.5vh 0.46vw;
-  width: 95%;               
+  margin: 1vh 0 0.5vh 0.46vw;
+  width: 95%;
   background-color:rgb(155, 151, 151);
   height: 1px;
 }
@@ -509,8 +516,8 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: .5vh;
-  color: #BE1C12;
+  margin-top: 0.5vh;
+  color: #be1c12;
   font-size: 1.6rem;
 }
 
@@ -519,21 +526,21 @@ button {
 }
 
 #pomo-time {
-  margin-left: .5vw;
+  margin-left: 0.5vw;
   width: 4vw;
-  border: solid #F4BFBF 3px;
+  border: solid #f4bfbf 3px;
   border-radius: 8px;
   background-color: whitesmoke;
   text-align: center;
-  color: #BE1C12;
+  color: #be1c12;
 }
 
 #adjust-volume {
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  margin-top: .5vh;
-  color: #BE1C12;
+  margin-top: 0.5vh;
+  color: #be1c12;
   font-size: 1.6rem;
 }
 
@@ -543,12 +550,12 @@ button {
 
 #volume-text {
   margin-left: 2.65vw;
-  border: solid #F4BFBF 3px;
+  border: solid #f4bfbF 3px;
   border-radius: 8px;
   background-color: whitesmoke;
   width: 4vw;
   text-align: center;
-  color: #BE1C12;
+  color: #be1c12;
 }
 
 #volume-slider {
@@ -557,8 +564,6 @@ button {
   width: 16.25vw;
 }
 
-
-
 body {
   background-image: url('./assets/background.svg');
   background-size: 100%;
@@ -566,13 +571,12 @@ body {
   height: 100vh;
 }
 
-
 /* #restart-tomato{
     position: absolute;
     left: 2%;
     bottom: 1%;
 } */
-#restart-button{
+#restart-button {
   position: absolute;
   background-repeat: no-repeat;
   background-position: center;
@@ -594,7 +598,6 @@ body {
   width: 90.96px;
   background-position: center;
   height: 99.62px;
-  bottom: 2%;
 }
 
 /* Onboarding */
