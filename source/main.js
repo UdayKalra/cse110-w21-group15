@@ -51,9 +51,9 @@ function changeVolumeSlider () {
 
 function settingsTime () {
   const adjustedTime = document.getElementById('pomo-time')
-  
+
   // Alter time based on setting inputs
-  if(adjustedTime.value >= 1 && adjustedTime.value <= 99) {
+  if (adjustedTime.value >= 1 && adjustedTime.value <= 99) {
     pomoSession.pomoLen = adjustedTime.value
     timerLen = updateTimerLen()
     displayMinSecond()
@@ -72,7 +72,7 @@ function disableTime () {
   const adjustedTime = document.getElementById('pomo-time')
 
   // Disable/enable time adjustment based on running time
-  if(timeRunning.style.display === 'block') {
+  if (timeRunning.style.display === 'block') {
     adjustedTime.disabled = true
   } else {
     adjustedTime.disabled = false
@@ -82,7 +82,7 @@ function disableTime () {
 function showSettings () {
   // Settings button
   const settingStatus = document.getElementById('settings-overlay')
-  
+
   // disable time adjustment
   disableTime()
 
@@ -121,7 +121,7 @@ function stopSession () {
   displayMinSecond()
   // Stop the timer
   clearInterval(timerRef)
-  //enable time adjustment
+  // Enable time adjustment
   disableTime()
 }
 
