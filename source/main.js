@@ -37,6 +37,7 @@ function changeVolumeText () {
   const slider = document.getElementById('volume-slider')
   const number = document.getElementById('volume-text')
 
+  // Make volume slider and text adjustor the same value
   number.value = slider.value
 }
 
@@ -44,20 +45,46 @@ function changeVolumeSlider () {
   const slider = document.getElementById('volume-slider')
   const number = document.getElementById('volume-text')
 
+  // Set volume slider to be the same as text adjustor, 0 if empty text
   slider.value = (number.value) ? number.value : 0
 }
 
 function settingsTime () {
-  const adjustedTime = document.getElementById('pomo-time').value
+  const adjustedTime = document.getElementById('pomo-time')
+  
+  // Alter time based on setting inputs
+  if(adjustedTime.value >= 1 && adjustedTime.value <= 99) {
+    pomoSession.pomoLen = adjustedTime.value
+    timerLen = updateTimerLen()
+    displayMinSecond()
 
-  pomoSession.pomoLen = adjustedTime
-  timerLen = updateTimerLen()
-  displayMinSecond()
+    document.getElementById('play').disabled = false
+    document.getElementById('close-settings').disabled = false
+  } else {
+    // Out of range, disable play button and settings exit button
+    document.getElementById('play').disabled = true
+    document.getElementById('close-settings').disabled = true
+  }
+}
+
+function disableTime () {
+  const timeRunning = document.getElementById('stop')
+  const adjustedTime = document.getElementById('pomo-time')
+
+  // Disable/enable time adjustment based on running time
+  if(timeRunning.style.display === 'block') {
+    adjustedTime.disabled = true
+  } else {
+    adjustedTime.disabled = false
+  }
 }
 
 function showSettings () {
   // Settings button
   const settingStatus = document.getElementById('settings-overlay')
+  
+  // disable time adjustment
+  disableTime()
 
   // Show/hide settings overlay based on current display
   if (settingStatus.style.display === 'none') {
@@ -71,6 +98,9 @@ function startSession () {
   // Change Start button to Stop button
   document.getElementById('play').style.display = 'none'
   document.getElementById('stop').style.display = 'block'
+
+  // disable time adjustment
+  disableTime()
 
   // Start the timer
   runTimer()
@@ -91,6 +121,8 @@ function stopSession () {
   displayMinSecond()
   // Stop the timer
   clearInterval(timerRef)
+  //enable time adjustment
+  disableTime()
 }
 
 function runTimer () {
