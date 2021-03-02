@@ -223,9 +223,7 @@ window.addEventListener('DOMContentLoaded', e => {
   onboardingButton.addEventListener('click', onBoardingClick)
   document.getElementById('onboarding-black').addEventListener('click', blackClicked)
   restartSession()
-  document.getElementById('o1').addEventListener('animationend', e => {
 
-  })
   if (myStorage.getItem('firstTime') === null) {
     console.log('first time visiting')
     myStorage.setItem('firstTime', false)
