@@ -12,11 +12,11 @@ const pomoSession = {
 }
 
 // pomoSession.pomoLen = 0.5
+const timer = {
+  timerLen : 0,
+  timerRef : 0
+}
 
-let timerLen
-let timerRef
-let mins
-let seconds
 
 // Add all EventListener when the DOM Loaded
 document.addEventListener('DOMContentLoaded', function (event) {
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
   document.getElementById('volume-slider').addEventListener('input', changeVolumeText)
 
   // Update and display timer length
-  timerLen = updateTimerLen()
-  displayMinSecond()
+  timer.timerLen = updateTimerLen()
+  displayMinSecond(timer.timerLen)
 })
 
 function changeVolumeText () {
@@ -51,8 +51,8 @@ function settingsTime () {
   const adjustedTime = document.getElementById('pomo-time').value
 
   pomoSession.pomoLen = adjustedTime
-  timerLen = updateTimerLen()
-  displayMinSecond()
+  timer.timerLen = updateTimerLen()
+  displayMinSecond(timer.timerLen)
 }
 
 function showSettings () {
@@ -73,7 +73,7 @@ function startSession () {
   document.getElementById('stop').style.display = 'block'
 
   // Start the timer
-  runTimer()
+  runTimer(updateTimer)
 }
 
 function stopSession () {
@@ -87,21 +87,21 @@ function stopSession () {
   document.getElementById('play').style.display = 'block'
   document.getElementById('stop').style.display = 'none'
   // Display the timer in Pomotime
-  timerLen = updateTimerLen()
-  displayMinSecond()
+  timer.timerLen = updateTimerLen()
+  displayMinSecond(timer.timerLen)
   // Stop the timer
-  clearInterval(timerRef)
+  clearInterval(timer.timerRef)
 }
 
-function runTimer () {
-  timerLen = updateTimerLen()
-  console.log(timerLen)
+function runTimer (updateTimer) {
+  timer.timerLen = updateTimerLen()
+  console.log(timer.timerLen)
   // Special case for first time start a work state, we need to offet a delay when clicking start button
   if (pomoSession.firstStart === true) {
-    timerLen -= 1000
+    timer.timerLen -= 1000
     pomoSession.firstStart = false
   }
-  timerRef = setInterval(updateTimer, 1000)
+  timer.timerRef = setInterval(updateTimer, 1000)
 }
 
 function updateTimerLen () {
@@ -121,8 +121,8 @@ function updateTimerLen () {
   return length * 60 * 1000 /* pomoLen in miliseconds */
 }
 
-function displayMinSecond () {
-  console.log(timerLen)
+function displayMinSecond (timerLen) {
+  // console.log(timerLen)
   mins = Math.floor((timerLen / 1000) / 60)
   seconds = (timerLen / 1000) % 60
   if (mins < 10) {
@@ -134,12 +134,13 @@ function displayMinSecond () {
   document.getElementById('time').innerHTML = mins + ':' + seconds
 }
 function updateTimer () {
-  if (timerLen <= 0) {
-    clearInterval(timerRef)
+  if (timer.timerLen <= 0) {
+    clearInterval(timer.timerRef)
     stateChange()
   }
-  displayMinSecond()
-  timerLen -= 1000
+  console.log(timer.timerLen)
+  displayMinSecond(timer.timerLen)
+  timer.timerLen -= 1000
 }
 
 /* this function does the actual changes to the document and our
@@ -152,13 +153,13 @@ function stateChange () {
       } else {
         pomoSession.state = 'shortBreak'
       }
-      runTimer()
+      runTimer(updateTimer)
       break
     case 'shortBreak':
       pomoSession.state = 'work'
       pomoSession.firstStart = true
       pomoSession.count++
-      timerLen = updateTimerLen()
+      timer.timerLen = updateTimerLen()
       // Change Stop button to Start button
       document.getElementById('play').style.display = 'block'
       document.getElementById('stop').style.display = 'none'
@@ -167,14 +168,14 @@ function stateChange () {
       pomoSession.state = 'work'
       pomoSession.firstStart = true
       pomoSession.count = 0
-      pomoSession.set++
-      updateTimerLen()
+      pomoSession.sets++
+      timer.timerLen = updateTimerLen()
       // Change Stop button to Start button
       document.getElementById('play').style.display = 'block'
       document.getElementById('stop').style.display = 'none'
       break
   }
-  displayMinSecond()
+  displayMinSecond(timer.timerLen)
 }
 
 // Onboarding
@@ -185,29 +186,28 @@ const onboardingButton = document.getElementById('onboarding-button')
 let current = 1
 const textDivs = [...document.querySelectorAll('.otext')]
 console.log(textDivs)
-window.addEventListener('DOMContentLoaded', e => {
-  e.preventDefault()
-  console.log('DOMContentLoaded')
-  onboardingButton.addEventListener('click', onBoardingClick)
-  document.getElementById('onboarding-black').addEventListener('click', blackClicked)
-  restartSession()
+// window.addEventListener('DOMContentLoaded', e => {
+//   e.preventDefault()
+//   console.log('DOMContentLoaded')
+//   onboardingButton.addEventListener('click', onBoardingClick)
+//   document.getElementById('onboarding-black').addEventListener('click', blackClicked)
+//   restartSession()
+//   document.getElementById('o1').addEventListener('animationend', e => {
 
-  document.getElementById('o1').addEventListener('animationend', e => {
-
-  })
-  if (myStorage.getItem('firstTime') === null) {
-    console.log('first time visiting')
-    myStorage.setItem('firstTime', false)
-    onboarding.setAttribute('class', 'active')
-    hideOnClickOutside(document.getElementById('onboarding-background'), 'play-restart')
-    return 1
-  } else {
-    console.log('not first time visiting')
-    myStorage.setItem('firstTime', false)
-    onboarding.setAttribute('class', 'in-active')
-  }
-  return 0
-})
+//   })
+//   if (myStorage.getItem('firstTime') === null) {
+//     console.log('first time visiting')
+//     myStorage.setItem('firstTime', false)
+//     onboarding.setAttribute('class', 'active')
+//     hideOnClickOutside(document.getElementById('onboarding-background'), 'play-restart')
+//     return 1
+//   } else {
+//     console.log('not first time visiting')
+//     myStorage.setItem('firstTime', false)
+//     onboarding.setAttribute('class', 'in-active')
+//   }
+//   return 0
+// })
 
 // function to cycle through onboarding pages
 const onBoardingClick = e => {
@@ -266,3 +266,15 @@ const hideOnClickOutside = (element, buttonId) => {
 }
 
 // testing for click on onboarding-black
+
+module.exports =  {
+  pomoSession: pomoSession,
+  timer : timer,
+  startSession : startSession,
+  stopSession: stopSession,
+  runTimer: runTimer,
+  updateTimerLen: updateTimerLen,
+  displayMinSecond: displayMinSecond,
+  stateChange: stateChange,
+  updateTimer: updateTimer
+};;
