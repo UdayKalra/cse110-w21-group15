@@ -13,10 +13,10 @@ document.body.innerHTML = '<div id="timer">' +
   '</button>' +
   '<p id="time">25:00</p>' +
   '</div>' +
-  '<div id="settings"></div>' + 
-  '<div id="close-settings"></div>' + 
-  '<div id="pomo-time"></div>' + 
-  '<div id="volume-text"></div>' + 
+  '<div id="settings"></div>' +
+  '<div id="close-settings"></div>' +
+  '<div id="pomo-time"></div>' +
+  '<div id="volume-text"></div>' +
   '<div id="volume-slider"></div>' +
   '<div id="onboarding"></div>' +
   '<div id="onboarding-button"></div>' +
@@ -26,14 +26,14 @@ document.body.innerHTML = '<div id="timer">' +
 
 require('../source/main')
 
-let evt = document.createEvent('Event')
-evt.initEvent("DOMContentLoaded", true, true, document, "", "", "", 0)
+const evt = document.createEvent('Event')
+evt.initEvent('DOMContentLoaded', true, true, document, '', '', '', 0)
 document.dispatchEvent(evt)
 
 describe('startSession', () => {
   test('Hide a start button and display a stop button', () => {
-    let playBtn = document.getElementById('play')
-    let stopBtn = document.getElementById('stop')
+    const playBtn = document.getElementById('play')
+    const stopBtn = document.getElementById('stop')
 
     playBtn.click()
     expect(playBtn.style.display).toBe('none')
@@ -43,8 +43,8 @@ describe('startSession', () => {
 
 describe('startSession', () => {
   test('Hide a start button and display a stop button', () => {
-    let playBtn = document.getElementById('play')
-    let stopBtn = document.getElementById('stop')
+    const playBtn = document.getElementById('play')
+    const stopBtn = document.getElementById('stop')
 
     stopBtn.click()
 

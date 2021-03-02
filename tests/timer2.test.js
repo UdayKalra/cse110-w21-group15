@@ -9,11 +9,11 @@ document.body.innerHTML = '<div>' +
   '</button>' +
   '<p id="time">25:00</p>' +
   '</div>'
-    
+
 describe('runTimer', () => {
   jest.useFakeTimers()
   test('The first time the timer starts', () => {
-  const callback = jest.fn()
+    const callback = jest.fn()
     main.pomoSession.firstStart = true
     main.runTimer(callback)
     jest.advanceTimersByTime(3000)
@@ -58,26 +58,26 @@ describe('updateTimeLen', () => {
 
 describe('displayMinSecond', () => {
   test('1 digit minutue and 1 digit second', () => {
-    let timerLen = 121000
+    const timerLen = 121000
     main.displayMinSecond(timerLen)
     expect(document.getElementById('time').innerHTML).toBe('02:01')
   })
 
   test('1 digit minutue and 2 digit second', () => {
-    let timerLen = 141000
+    const timerLen = 141000
     main.displayMinSecond(timerLen)
     expect(document.getElementById('time').innerHTML).toBe('02:21')
   })
 
   test('2 digit minutue and 1 digit second', () => {
-    let timerLen = 725000
+    const timerLen = 725000
     console.log()
     main.displayMinSecond(timerLen)
     expect(document.getElementById('time').innerHTML).toBe('12:05')
   })
 
   test('2 digit minutue and 2 digit second', () => {
-    let timerLen = 741000
+    const timerLen = 741000
     main.displayMinSecond(timerLen)
     expect(document.getElementById('time').innerHTML).toBe('12:21')
   })
@@ -115,8 +115,8 @@ describe('stateChange', () => {
   })
 
   test('In shortBreak state', () => {
-    var playBtn = document.getElementById('play')
-    var stopBtn = document.getElementById('stop')
+    const playBtn = document.getElementById('play')
+    const stopBtn = document.getElementById('stop')
     main.pomoSession.state = 'shortBreak'
     main.pomoSession.pomoLen = 5
     main.pomoSession.count = 0
@@ -134,8 +134,8 @@ describe('stateChange', () => {
   })
 
   test('In longBreak state', () => {
-    let playBtn = document.getElementById('play')
-    let stopBtn = document.getElementById('stop')
+    const playBtn = document.getElementById('play')
+    const stopBtn = document.getElementById('stop')
     main.pomoSession.state = 'longBreak'
     main.pomoSession.pomoLen = 3
     main.pomoSession.count = 4

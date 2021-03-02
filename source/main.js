@@ -265,7 +265,6 @@ const hideOnClickOutside = (element, buttonId) => {
 }
 
 // testing for click on onboarding-black
-
 module.exports =  {
   pomoSession: pomoSession,
   timer: timer,
@@ -276,4 +275,4 @@ module.exports =  {
   displayMinSecond: displayMinSecond,
   stateChange: stateChange,
   updateTimer: updateTimer
-};;
+}
