@@ -14,7 +14,7 @@ describe('Test Volume Change', () => {
         '<label for="pomo-time">Pomo Time:</label>' +
         '<input id="pomo-time" type="number" step="1" min="1" value="25" max="60">' +
         '</div>'
-        
+
     test('Volume Text Should Change with Slider Change', () => {
 
         const slider = document.getElementById('volume-slider')
@@ -22,4 +22,5 @@ describe('Test Volume Change', () => {
 
         expect(settings.settingsTime().toBe(50))
     })
-}) */
+}) 
+*/
