@@ -54,8 +54,8 @@ function settingsTime () {
   // Alter time based on setting inputs
   if (adjustedTime.value >= 1 && adjustedTime.value <= 99) {
     pomoSession.pomoLen = adjustedTime.value
-    timerLen = updateTimerLen()
-    displayMinSecond()
+    timer.timerLen = updateTimerLen()
+    displayMinSecond(timer.timerLen)
 
     document.getElementById('play').disabled = false
     document.getElementById('close-settings').disabled = false
