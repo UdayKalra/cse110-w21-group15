@@ -76,7 +76,6 @@ function disableTime () {
   } else {
     adjustedTime.disabled = false
   }
-
 }
 
 function showSettings () {
@@ -123,7 +122,6 @@ function stopSession () {
   clearInterval(timer.timerRef)
   // Enable time adjustment
   disableTime()
-
 }
 
 function runTimer (updateTimer) {
@@ -302,7 +300,7 @@ const hideOnClickOutside = (element, buttonId) => {
 }
 
 // testing for click on onboarding-black
-module.exports =  {
+module.exports = {
   pomoSession: pomoSession,
   timer: timer,
   startSession: startSession,
