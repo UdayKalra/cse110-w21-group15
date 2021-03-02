@@ -13,10 +13,9 @@ const pomoSession = {
 
 // pomoSession.pomoLen = 0.5
 const timer = {
-  timerLen : 0,
-  timerRef : 0
+  timerLen: 0,
+  timerRef: 0
 }
-
 
 // Add all EventListener when the DOM Loaded
 document.addEventListener('DOMContentLoaded', function (event) {
@@ -123,8 +122,8 @@ function updateTimerLen () {
 
 function displayMinSecond (timerLen) {
   // console.log(timerLen)
-  mins = Math.floor((timerLen / 1000) / 60)
-  seconds = (timerLen / 1000) % 60
+  let mins = Math.floor((timerLen / 1000) / 60)
+  let seconds = (timerLen / 1000) % 60
   if (mins < 10) {
     mins = '0' + mins
   }
@@ -186,28 +185,28 @@ const onboardingButton = document.getElementById('onboarding-button')
 let current = 1
 const textDivs = [...document.querySelectorAll('.otext')]
 console.log(textDivs)
-// window.addEventListener('DOMContentLoaded', e => {
-//   e.preventDefault()
-//   console.log('DOMContentLoaded')
-//   onboardingButton.addEventListener('click', onBoardingClick)
-//   document.getElementById('onboarding-black').addEventListener('click', blackClicked)
-//   restartSession()
-//   document.getElementById('o1').addEventListener('animationend', e => {
+window.addEventListener('DOMContentLoaded', e => {
+  e.preventDefault()
+  console.log('DOMContentLoaded')
+  onboardingButton.addEventListener('click', onBoardingClick)
+  document.getElementById('onboarding-black').addEventListener('click', blackClicked)
+  restartSession()
+  document.getElementById('o1').addEventListener('animationend', e => {
 
-//   })
-//   if (myStorage.getItem('firstTime') === null) {
-//     console.log('first time visiting')
-//     myStorage.setItem('firstTime', false)
-//     onboarding.setAttribute('class', 'active')
-//     hideOnClickOutside(document.getElementById('onboarding-background'), 'play-restart')
-//     return 1
-//   } else {
-//     console.log('not first time visiting')
-//     myStorage.setItem('firstTime', false)
-//     onboarding.setAttribute('class', 'in-active')
-//   }
-//   return 0
-// })
+  })
+  if (myStorage.getItem('firstTime') === null) {
+    console.log('first time visiting')
+    myStorage.setItem('firstTime', false)
+    onboarding.setAttribute('class', 'active')
+    hideOnClickOutside(document.getElementById('onboarding-background'), 'play-restart')
+    return 1
+  } else {
+    console.log('not first time visiting')
+    myStorage.setItem('firstTime', false)
+    onboarding.setAttribute('class', 'in-active')
+  }
+  return 0
+})
 
 // function to cycle through onboarding pages
 const onBoardingClick = e => {
@@ -269,8 +268,8 @@ const hideOnClickOutside = (element, buttonId) => {
 
 module.exports =  {
   pomoSession: pomoSession,
-  timer : timer,
-  startSession : startSession,
+  timer: timer,
+  startSession: startSession,
   stopSession: stopSession,
   runTimer: runTimer,
   updateTimerLen: updateTimerLen,
