@@ -265,7 +265,10 @@ function restartSession () {
 }
 
 const restartOnboarding = () => {
-  textDivs.forEach(item => item.style.display = 'none')
+  textDivs.forEach(item => {
+    item.style.display = 'none'
+    return 1
+  })
   document.getElementById(`o${current}`).style.display = 'block'
   document.getElementById('onboarding-progress-bar').src = `./assets/onboarding-${current}.svg`
 }
@@ -275,9 +278,9 @@ const blackClicked = e => {
   console.log('clicked')
 }
 
-const showOnBoarding = () => {
-  onboarding.setAttribute('class', 'active')
-}
+// const showOnBoarding = () => {
+//   onboarding.setAttribute('class', 'active')
+// }
 // hides onboarding menu
 const hideOnClickOutside = (element, buttonId) => {
   const outsideClickListener = e => {
