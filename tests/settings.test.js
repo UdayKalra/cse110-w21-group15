@@ -22,5 +22,4 @@ describe('Test Volume Change', () => {
 
         expect(settings.settingsTime().toBe(50))
     })
-}) 
-*/
+}) */
