@@ -120,7 +120,7 @@ describe('Pomo Timer', () => {
 
   it('Check state change of the timer', () => {
     // Go over onboarding slides at the first time
-    let loop1 = Array.from({length:6}, (v,k)=>k+1)
+    const loop1 = Array.from({ length: 6 }, (v, k) => k + 1)
     cy.wrap(loop1).each(() => {
       cy.get('#onboarding-button-img').click()
     })
@@ -182,7 +182,7 @@ describe('Pomo Timer', () => {
       .invoke('val', 'Task 3')
       .trigger('input')
     cy.get('#add-task').click()
-    
+
     cy.get('#tasks').should(($tr) => {
       const $divs = $tr.find('p')
       expect($divs.eq(0)).to.contain('Task 1')
